@@ -19,7 +19,7 @@ class AIbot(sc2.BotAI):
 	def on_end(self, game_result):
 		print(game_result)
 		if game_result == Result.Victory:
-			np.save("Data/{}.npy".format(str(int(time.time()))), np.array(self.train_data))
+			np.save("Data/TrainData/{}.npy".format(str(int(time.time()))), np.array(self.train_data))
 
 	async def on_step(self, iteration):
 		self.iteration = iteration
@@ -324,4 +324,4 @@ class AIbot(sc2.BotAI):
 
 number_of_games = input("How many simulated runs:")
 for i in range(int(number_of_games)):
-	run_game(maps.get("PortAleksanderLE"), [Bot(Race.Protoss, AIbot()), Computer(Race.Protoss, Difficulty.Medium)], realtime = False)
+	run_game(maps.get("PortAleksanderLE"), [Bot(Race.Protoss, AIbot()), Computer(Race.Protoss, Difficulty.Easy)], realtime = False)
