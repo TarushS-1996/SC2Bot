@@ -73,7 +73,7 @@ def mapRandomizer():
     return mapToSend
 
 def main():
-    run_game(mapRandomizer(), [Bot(Race.Protoss, MainBot()), Computer(Race.Protoss, Difficulty.Easy)], realtime = True)
+    run_game(mapRandomizer(), [Bot(Race.Protoss, MainBot()), Computer(Race.Protoss, Difficulty.Easy)], realtime = False)
 
 if __name__ == "__main__":
     main()
